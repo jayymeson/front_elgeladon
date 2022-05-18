@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="shortcut icon"
+      type="imagex/png"
+      href="./assets/icons/logo.svg"
+    />
+    <title>El Geladon</title>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <section class="Home">
+        <h2>Paleta Escolhida: </h2>
+        <div classe="paleta-escolhida-espaco">
+            
+            <div id="paleta-escolhida-input-espaco">
+                <input type="number" id="idPaleta" placeholder="Digite o ID da paleta e clique em 'Escolher'"/>
+                <button id="idPaletaBotao" onclick="findByIdPaletas()"> Escolher </button>
+            </div>
+            <div id="paletaEscolhida">
+                
+            </div>
+        </div>
+        
+
+        <h2>Paletas Disponíveis:</h2>
+        <div class="Home__container">
+          <div class="PaletaLista" id="paletaList"></div>
+        </div>
+      </section>
+    <script src="./assets/script.js"></script>
+</body>
+</html>
