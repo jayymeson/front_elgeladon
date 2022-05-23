@@ -69,8 +69,7 @@ html {
   }
 }
 
-.PaletaCardItem,
-.PaletaListaItem {
+.CartaoPaleta {
   font-family: 'Exo';
   background: #ffffff4d;
   border-radius: 10px;
@@ -80,15 +79,21 @@ html {
   justify-content: space-around;
 }
 
-.PaletaCardItem {
+.CartaoPaleta {
   margin: 20px 0;
-  height: 150px;
-  width: 315px;
+  height: 175px;
 }
 
 @media (max-width: 400px) {
   .PaletaCardItem,
-  .PaletaListaItem {
+  .CartapPaleta_infos {
+    width: 210px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 400px) {
+  .Header {
     width: 210px;
     height: 180px;
   }
@@ -101,24 +106,22 @@ html {
   flex-direction: column;
 }
 
-.PaletaCardItem__sabor,
-.PaletaListaItem__sabor {
+
+.PaletaListaItem__sabor > h4 {
   font-size: 1.5em;
   font-weight: 700;
   line-height: 100%;
 }
 
-.PaletaCardItem__descricao,
-.PaletaListaItem__descricao {
+.CartapPaleta_infos > p {
   font-size: 0.85em;
 }
 
-.PaletaCardItem__preco,
-.PaletaListaItem__preco {
+.CartapPaleta_infos > spán {
   color: #9400d3;
 }
 
-.PaletaListaItem__foto {
+.CartaoPaleta_img {
   height: 150px;
   margin-right: -60px;
 } 
@@ -138,7 +141,15 @@ html {
 
 }
 
+.PesquisaPaletar {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 #idPaletaBotao {
+    
     background-color: transparent;
     border: 1px solid #9400d3;
     padding: 8px;
@@ -152,15 +163,8 @@ html {
     font-size: 16px;
 }
 
-#idPaletaBotao:hover {
-    background-color: #9400d3;
-    color: #ffffff;
-}
-
-#paleta-escolhida-input-espaco {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#inputIdPaleta {
+    height: 30px;
     width: 330px;
 }
 
@@ -180,26 +184,29 @@ html {
 .Header > .Header__conteiner > div {
   display: flex;
   align-items: center;
+  justify-content: center;
   font-size: large;
   width: 16vw;
   height: 7vh;
   border-radius: 10px;
   position:relative;
   background-color: #ffffff4d
+
 }
 
 .Header > .Header__conteiner > div > img {
   width: 70px;
   position: absolute;
   left: -25px;
-  top: -10px;
+  top: -15px;
 }
 
-.Header > .Header__conteiner > div > h2{
-  position: absolute;
-  left: 45px;
+.MensagemDeErro {
+  color: red;
+  margin: 16px;
+  font-size: large;
 }
 
-.Header > .Header__conteiner > img {
-  width: 40px;
-}
+
+
+

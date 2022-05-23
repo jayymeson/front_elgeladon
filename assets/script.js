@@ -13,6 +13,11 @@ const listarTodasAsPaletas = async () => {
 
 const buscarPaletasPorId = async (id) => {
   const resposta = await fetch(`${baseURL}/paletas/paleta/${id}`);
+
+  if (resposta.status === 404) {
+    return false;
+  }
+
   const paleta = await resposta.json();
 
   return paleta;
@@ -89,7 +94,9 @@ const imprimirTodasAsPaletas = async () => {
            <span>R$ ${element.preco.toFixed(2)}</span>
            <P>${element.descricao}</P>
         </div>
-        <img class="CartaoPaleta_foto" src="${element.foto}" alt="Paleta de ${element.sabor}" />
+        <img class="CartaoPaleta_foto" src="${element.foto}" alt="Paleta de ${
+        element.sabor
+      }" />
     </div>
 
         `
@@ -97,4 +104,32 @@ const imprimirTodasAsPaletas = async () => {
   });
 };
 
-imprimirTodasAsPaletas()
+imprimirTodasAsPaletas();
+
+const imprimirUmaPaletaPorID = async () => {
+  document.getElementById("paletaPesquisada").innerHTML = "";
+
+  const input = document.getElementById("inputIdPaleta");
+  const id = input.value;
+
+  const paleta = await buscarPaletasPorId(id);
+
+  if (paleta === false) {
+    document.getElementById("paletaPesquisada").innerHTML = "Nenhuma paleta encontrada! "
+  }
+
+  document.getElementById("paletaPesquisada").innerHTML = `
+  <div class="CartaoPaleta">
+        <div class="CartaoPaleta__infos">
+           <h4>${paleta.sabor}</h4>
+           <span>R$ ${paleta.preco.toFixed(2)}</span>
+           <P>${paleta.descricao}</P>
+        </div>
+        <img class="CartaoPaleta_foto" src="${paleta.foto}" alt="Paleta de ${
+    paleta.sabor
+  }" />
+    </div>
+  `;
+};
+
+
