@@ -11,7 +11,7 @@ html {
   font-family: Exo, sans-serif;
 }
 
- .Home {
+.Home {
   position: relative;
   background-image: radial-gradient(
     farthest-corner at 40px 40px,
@@ -25,7 +25,6 @@ html {
   color: #000000;
   box-shadow: 0px 0px 15px #0000004d;
 }
-
 
 .Home > h2 {
   display: flex;
@@ -70,7 +69,7 @@ html {
 }
 
 .CartaoPaleta {
-  font-family: 'Exo';
+  font-family: "Exo";
   background: #ffffff4d;
   border-radius: 10px;
   padding: 10px;
@@ -106,7 +105,6 @@ html {
   flex-direction: column;
 }
 
-
 .PaletaListaItem__sabor > h4 {
   font-size: 1.5em;
   font-weight: 700;
@@ -124,48 +122,46 @@ html {
 .CartaoPaleta_img {
   height: 150px;
   margin-right: -60px;
-} 
+}
 
 .paleta-escolhida-espaco {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px;
 }
 
 #idPaleta {
-    padding: 8px;
-    width: 100%;
-    border: none;
-    border-radius: 3.2px;
-
+  padding: 8px;
+  width: 100%;
+  border: none;
+  border-radius: 3.2px;
 }
 
 .PesquisaPaletar {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 #idPaletaBotao {
-    
-    background-color: transparent;
-    border: 1px solid #9400d3;
-    padding: 8px;
-    color: #9400d3;
-    font-weight: 600;
-    border-radius: 6.4px;
-    width: 330px;
-    cursor: pointer;
-    margin-top: 8px;
-    transition: all .3s ease-in-out;
-    font-size: 16px;
+  background-color: transparent;
+  border: 1px solid #9400d3;
+  padding: 8px;
+  color: #9400d3;
+  font-weight: 600;
+  border-radius: 6.4px;
+  width: 330px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: all 0.3s ease-in-out;
+  font-size: 16px;
 }
 
 #inputIdPaleta {
-    height: 30px;
-    width: 330px;
+  height: 30px;
+  width: 330px;
 }
 
 .Header {
@@ -189,9 +185,8 @@ html {
   width: 16vw;
   height: 7vh;
   border-radius: 10px;
-  position:relative;
-  background-color: #ffffff4d
-
+  position: relative;
+  background-color: #ffffff4d;
 }
 
 .Header > .Header__conteiner > div > img {
@@ -206,7 +201,3 @@ html {
   margin: 16px;
   font-size: large;
 }
-
-
-
-

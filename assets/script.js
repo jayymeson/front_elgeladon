@@ -115,7 +115,8 @@ const imprimirUmaPaletaPorID = async () => {
   const paleta = await buscarPaletasPorId(id);
 
   if (paleta === false) {
-    document.getElementById("paletaPesquisada").innerHTML = "Nenhuma paleta encontrada! "
+    document.getElementById("paletaPesquisada").innerHTML =
+      "Nenhuma paleta encontrada! ";
   }
 
   document.getElementById("paletaPesquisada").innerHTML = `
@@ -131,5 +132,3 @@ const imprimirUmaPaletaPorID = async () => {
     </div>
   `;
 };
-
-
