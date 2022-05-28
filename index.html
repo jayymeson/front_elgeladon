@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,33 +15,145 @@
   <body>
     <div class="Home">
       <header class="Header">
-        <div class="Header__conteiner">
+        <div class="Header__container">
           <div>
-            <img src="./assets/icons/logo.svg" alt="Logo do El Geladon" />
+            <img src="./assets/icons/logo.svg" width="70px" />
             <h2>El Geladon</h2>
           </div>
-          <img src="./assets/icons/sacola.svg" alt="Imagem da sacola" />
+          <img src="./assets/icons/sacola.svg" width="40px" />
         </div>
       </header>
 
-      <h2>Pesquisar Paleta:</h2>
-      <div class="PesquisaPaletar">
-        <input
-          type="number"
-          id="inputIdPaleta"
-          placeholder="Digite o ID da Paleta"
-        />
-        <button id="idPaletaBotao" onclick="imprimirUmaPaletaPorID(id)">
-          Escolher
+      <div class="NovaPaleta__container">
+        <button
+          onclick="mostrarModalCriacao()"
+          class="botao-padrao botao-cadastro"
+        >
+          Cadastrar Paleta
         </button>
       </div>
-      <div class="PaletaPesquisada" id="paletaPesquisada">
-        <p class="MensagemDeErro" id="mensagemDeErro"></p>
+
+      <h2>Pesquisar Paleta</h2>
+      <div class="PesquisarPaleta">
+        <div class="PesquisarPaleta__container">
+          <input
+            id="inputBuscaSaborPaleta"
+            placeholder="Digite o sabor da Paleta e clique em escolher"
+          />
+          <button class="botao-padrao" onclick="imprimirUmaPaletaPorId()">
+            Escolher
+          </button>
+          <div class="PaletaPesquisada" id="paletaPesquisada"></div>
+        </div>
       </div>
 
       <h2>Paletas Disponíveis:</h2>
       <div class="Home__container">
         <div class="PaletaLista" id="paletaList"></div>
+      </div>
+
+      <div class="fundo-modal" id="fundoModalCriacao">
+        <div class="modal">
+          <div class="cabecalho-modal">
+            <h2>Cadastrar uma paleta</h2>
+            <span onclick="esconderModalCriacao()">X</span>
+          </div>
+          <div class="corpo-modal">
+            <input
+              class="input-sabor"
+              placeholder="Sabor da paleta"
+              id="inputSabor"
+            />
+            <input
+              type="number"
+              class="input-preco"
+              id="inputPreco"
+              placeholder="Preço da paleta"
+            />
+
+            <textarea
+              class="input-descricao"
+              placeholder="Descrição da paleta"
+              id="inputDescricao"
+              rows="4"
+            ></textarea>
+
+            <input
+              class="input-foto"
+              placeholder="Link da foto da paleta"
+              id="inputFoto"
+            />
+            <button class="botao-modal" onclick="cadastrarNovaPaleta()">
+              Cadastrar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="fundo-modal" id="fundoModalDeletar">
+        <div class="modal">
+          <div>
+            <div class="cabecalho-modal">
+              <h2>Confirmar</h2>
+              <span onclick="esconderModalDeletar()">X</span>
+            </div>
+          </div>
+          <div class="corpo modal corpo-modal-exclusao">
+            <h2>Deseja apagar a paleta?</h2>
+          </div>
+          <div id="botao-confirmar-exclusao" onclick="" class="botao-modal">
+            <button class="botao-confirmar-excluir-paleta">Sim</button>
+            <button
+              onclick="esconderModalDeletar()"
+              id="botao-cancelar-excluir-paleta"
+            >
+              Não
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="fundo-modal" id="fundoModalEdicao">
+        <div class="modal">
+          <div class="cabecalho-modal">
+            <h2>Atualizar uma paleta</h2>
+            <span onclick="esconderModalEdicao()">X</span>
+          </div>
+          <div class="corpo-modal">
+            <input
+              class="input-sabor"
+              placeholder="Sabor da paleta"
+              id="inputSaborEdicao"
+            />
+            <input
+              type="number"
+              class="input-preco"
+              id="inputPrecoEdicao"
+              placeholder="Preço da paleta"
+            />
+
+            <textarea
+              class="input-descricao"
+              placeholder="Descrição da paleta"
+              id="inputDescricaoEdicao"
+              rows="4"
+            ></textarea>
+
+            <input
+              class="input-foto"
+              placeholder="Link da foto da paleta"
+              id="inputFotoEdicao"
+            />
+            <button class="botao-modal" id="botaoConfirmarEdicao">
+              Atualizar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="notificacao" id="notificacao">
+        <span id="notificacaoSpan">X</span>
+        <p id="notificacaoP"></p>
       </div>
     </div>
     <script src="./assets/script.js"></script>
